@@ -7,7 +7,7 @@ const MyEnrollments = () => {
 
   const {enrolledCourses,calculateCourseDuration,navigate} = useContext(AppContext)
 
-  const[progressArray,aetProgressArray] = useState([
+  const[progressArray,setProgressArray] = useState([
     {lectureCompleted:2, totalLectures:4},
     {lectureCompleted:1, totalLectures:5},
     {lectureCompleted:3, totalLectures:6},
