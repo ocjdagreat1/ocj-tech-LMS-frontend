@@ -28,7 +28,7 @@ const MyEnrollments = () => {
     <div className='md:px-36 px-8 pt-10'>
      <h1 className='text-2xl font-semibold'>My Enrollments</h1> 
       <div className="overflow-x-auto">
-    <table className='md:table-auto table-fixed w-full border mt-10'>
+    <table className='md:table-auto w-full border mt-10'>
       <thead className='text-gray-900 border-b border-gray-500/20 text-sm text-left max-sm:hidden'>
         <tr>
           <th className='px-4 py-3 font-semibold truncate'>Course</th>
