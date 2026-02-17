@@ -90,15 +90,20 @@ const fetchUserData = async()=>{
   }
 
   //function to calculate No of lectures in the course
-  const calculateNoOfLectures = (course)=>{
-    let totalLectures = 0;
-    course.courseContent.forEach(chapter =>{
-      if(Array.isArray(chapter.chapterContent)){
-        totalLectures += chapter.chapterContent.length
-      }
-    })
-     return totalLectures
-  }
+ const calculateNoOfLectures = (course) => {
+  if (!course?.courseContent) return 0;
+
+  let totalLectures = 0;
+
+  course.courseContent.forEach((chapter) => {
+    if (Array.isArray(chapter.chapterContent)) {
+      totalLectures += chapter.chapterContent.length;
+    }
+  });
+
+  return totalLectures;
+};
+
 
   //fetch user enrolled courses
   const fetchUserEnrolledCourses = async ()=>{
