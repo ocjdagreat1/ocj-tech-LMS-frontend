@@ -135,6 +135,10 @@ const AddCourse = () => {
         setImage(null);
         setChapters([]);
         if (quillRef.current) quillRef.current.root.innerHTML = '';
+
+        // Refresh homepage courses immediately
+          fetchAllCourses();
+
       } else {
         toast.error(data.message);
       }
@@ -144,7 +148,7 @@ const AddCourse = () => {
   };
 
   //QUILL INIT 
-  
+
   useEffect(() => {
     if (editorRef.current && !quillRef.current) {
       quillRef.current = new Quill(editorRef.current, { theme: 'snow' });
