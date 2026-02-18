@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const AddCourse = () => {
-  const { backendUrl, getToken } = useContext(AppContext);
+  const { backendUrl, getToken,fetchAllCourses } = useContext(AppContext);
 
   const quillRef = useRef(null);
   const editorRef = useRef(null);
@@ -137,7 +137,7 @@ const AddCourse = () => {
         if (quillRef.current) quillRef.current.root.innerHTML = '';
 
         // Refresh homepage courses immediately
-          fetchAllCourses();
+          await fetchAllCourses();
 
       } else {
         toast.error(data.message);
