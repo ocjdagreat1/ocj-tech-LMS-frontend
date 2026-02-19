@@ -137,7 +137,7 @@ const AddCourse = () => {
         if (quillRef.current) quillRef.current.root.innerHTML = '';
 
         // Refresh homepage courses immediately
-          await fetchAllCourses();
+          fetchAllCourses();
 
       } else {
         toast.error(data.message);
