@@ -13,8 +13,11 @@ import AddCourse from './pages/educator/AddCourse'
 import MyCourses from './pages/educator/MyCourses'
 import StudentsEnrolled from './pages/educator/StudentsEnrolled'
 import Navbar from './component/student/Navbar'
+import AboutUs from './pages/student/AboutUs'
 import "quill/dist/quill.snow.css";
  import { ToastContainer} from 'react-toastify';
+import Contact from './pages/student/ContactUs'
+import PrivacyPolicy from './pages/student/PrivacyPolicy'
 
 
 
@@ -35,6 +38,9 @@ const App = () => {
         <Route path='/my-enrollments' element={<MyEnrollments/>}/> 
         <Route path='/player/:courseId' element={<Player/>}/> 
         <Route path='/loading/:path' element={<Loading/>}/>
+        <Route path='/about-us' element={<AboutUs/>}/>
+        <Route path='/contact-us' element={<Contact/>}/>
+        <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
 
         <Route path='/educator' element={<Educator/>}>
   <Route index element={<Dashboard/>}/>

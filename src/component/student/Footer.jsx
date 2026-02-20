@@ -95,9 +95,9 @@ const Footer = () => {
           <h2 className="font-semibold text-white mb-5">Company</h2>
           <ul className="flex md:flex-col w-full justify-between text-sm text-white/80 md:space-y-2">
             <li><Link to="/">Home </Link></li>
-            <li><a href="">About us</a></li>
-            <li><a href="">Contact us</a></li>
-            <li><a href="">Privacy Policy</a></li>
+            <li><Link to="/about-us">About us</Link></li>
+            <li><Link to="/contact-us">Contact us</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
           </ul>
         </div>
 
