@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import logo from "../../assets/ocjtechR.png";
 import { AppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   const { backendUrl } = useContext(AppContext);
@@ -93,7 +94,7 @@ const Footer = () => {
         <div className="flex flex-col md:items-start items-center w-full">
           <h2 className="font-semibold text-white mb-5">Company</h2>
           <ul className="flex md:flex-col w-full justify-between text-sm text-white/80 md:space-y-2">
-            <li><a href="">Home</a></li>
+            <li><Link to="/">Home </Link></li>
             <li><a href="">About us</a></li>
             <li><a href="">Contact us</a></li>
             <li><a href="">Privacy Policy</a></li>
