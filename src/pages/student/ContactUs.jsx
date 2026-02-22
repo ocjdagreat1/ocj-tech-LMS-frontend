@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaHome, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Footer from "../../component/student/Footer";
+import { AppContext } from '../../context/AppContext';
 
 const Contact = () => {
+
+  const{backendUrl}=useContext(AppContext);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -26,7 +29,7 @@ const Contact = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/contact/send`,
+        `${backendUrl}/api/contact/send`,
         form
       );
 
