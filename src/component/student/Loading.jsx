@@ -43,7 +43,7 @@ const Loading = () => {
       {/* Logo + Text Section */}
       <div className="relative z-10 flex flex-col items-center gap-6">
 
-        {/* Logo + International Text on the same line */}
+       
         <h2 className="flex items-center justify-center gap-4 text-3xl md:text-4xl font-bold text-gray-800">
           {/* Big logo */}
           <img
@@ -54,7 +54,7 @@ const Loading = () => {
 
           {/* "International" text */}
           <span className="text-cyan-600 md:text-4xl font-semibold">
-            International
+            Global
           </span>
         </h2>
 
