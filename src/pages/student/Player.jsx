@@ -32,10 +32,10 @@ const Player = () => {
     const course = enrolledCourses.find((c) => c._id === courseId);
     if (course) {
       setCourseData(course);
-      const userRating = course.courseRatings.find(
-        (item) => item.userId === userData?._id
-      );
-      if (userRating) setInitialRating(userRating.rating);
+     const userRating = course.courseRatings?.find(
+  (item) => item.userId === userData?._id
+);
+if (userRating) setInitialRating(userRating.rating);
     }
   };
 
@@ -110,6 +110,15 @@ const Player = () => {
     getCourseProgress();
   }, []);
 
+
+  const extractYouTubeId = (url) => {
+  if (!url) return null;
+
+  const regExp =
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&?/]+)/;
+  const match = url.match(regExp);
+  return match ? match[1] : url; // if already ID
+};
 
   return courseData?(
     <>
@@ -187,24 +196,35 @@ const Player = () => {
         {/* Right Column */}
         <div className="md:mt-10 bg-white border border-gray-300 rounded-xl shadow-sm p-3">
           {playerData ? (
-            <div>
-              <YouTube
-                videoId={playerData.lectureUrl?.split('/').pop()}
-                iframeClassName="w-full aspect-video"
-              />
-              <div className="flex justify-between items-center mt-1">
-                <p>
-                  {playerData.chapter}.{playerData.lecture} {playerData.lectureTitle}
-                </p>
-                <button
-                  onClick={() => markLectureAsCompleted(playerData.lectureId)}
-                  className="text-blue-600"
-                >
-                  {progressData?.lectureCompleted?.includes(playerData.lectureId) ? 'Completed' : 'Mark Complete'}
-                </button>
-              </div>
-            </div>
-          ) : (
+  <div>
+    <YouTube
+      videoId={extractYouTubeId(playerData.lectureUrl)}
+      iframeClassName="w-full aspect-video"
+      opts={{
+        playerVars: {
+          autoplay: 1,
+          modestbranding: 1,
+          rel: 0,
+        },
+      }}
+    />
+
+    <div className="flex justify-between items-center mt-1">
+      <p>
+        {playerData.chapter}.{playerData.lecture} {playerData.lectureTitle}
+      </p>
+      <button
+        onClick={() => markLectureAsCompleted(playerData.lectureId)}
+        className="text-blue-600"
+      >
+        {progressData?.lectureCompleted?.includes(playerData.lectureId)
+          ? 'Completed'
+          : 'Mark Complete'}
+      </button>
+    </div>
+  </div>
+) : (
+
             <img src={courseData.courseThumbnail} alt="" />
           )}
         </div>
