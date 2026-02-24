@@ -103,27 +103,45 @@ export const dummyEducatorData = {
 }
 
 export const dummyTestimonial = [
-    {
-        name: 'Donald Jackman',
-        role: 'SWE 1 @ Amazon',
-        image: assets.profile_img_1,
-        rating: 5,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
-    },
-    {
-        name: 'Richard Nelson',
-        role: 'SWE 2 @ Samsung',
-        image: assets.profile_img_2,
-        rating: 4,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
-    },
-    {
-        name: 'James Washington',
-        role: 'SWE 2 @ Google',
-        image: assets.profile_img_3,
-        rating: 4.5,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
-    },
+  {
+    name: 'Donald Jackman',
+    role: 'SWE 1 @ Amazon',
+    image: assets.profile_img_1,
+    rating: 5,
+    feedback: `I've been using Imagify for nearly two years, primarily for Instagram, and it has completely transformed the way I manage and edit my content.
+
+The interface is clean, intuitive, and incredibly easy to use, even for beginners. What I appreciate most is the speed and performance — tasks that used to take me hours now take just minutes.
+
+The optimization tools helped me improve image quality while keeping file sizes small, which significantly boosted my engagement rates. The platform continuously adds new features, and the support team is always responsive and helpful.
+
+I highly recommend Imagify to anyone looking for a reliable and efficient image optimization solution. It has truly made my workflow smoother and more professional.`,
+  },
+  {
+    name: 'Richard Nelson',
+    role: 'SWE 2 @ Samsung',
+    image: assets.profile_img_2,
+    rating: 4,
+    feedback: `Imagify has been a game-changer for my social media and web projects.
+
+Before using this platform, managing media assets was one of the most time-consuming parts of my workflow. Now, everything feels streamlined and organized.
+
+The compression quality is excellent, and I’ve noticed faster website load times, which improved overall performance metrics. I also appreciate how beginner-friendly the dashboard is.
+
+Overall, it's a dependable tool that delivers consistent results, and I would confidently recommend it to professionals and creators alike.`,
+  },
+  {
+    name: 'James Washington',
+    role: 'SWE 2 @ Google',
+    image: assets.profile_img_3,
+    rating: 4.5,
+    feedback: `Using Imagify has significantly improved my productivity and content quality.
+
+The platform offers a seamless experience from upload to optimization. I particularly love how easy it is to batch-process multiple images without sacrificing quality.
+
+Over time, I’ve seen measurable improvements in page speed and user engagement. The tool integrates smoothly into my existing workflow, which made adoption effortless.
+
+If you're serious about improving performance and maintaining high visual standards, Imagify is definitely worth it.`,
+  },
 ];
 
 export const dummyDashboardData = {
