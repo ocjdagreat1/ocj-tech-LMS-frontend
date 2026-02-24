@@ -92,7 +92,7 @@ const PrivacyPolicy = () => {
               6. Your Rights
             </h2>
             <p className="text-gray-700">
-              You have the right to access, update, or delete your personal information. Contact us at <span className="font-medium text-red-500">support@ocjtechinternational.com</span> for any requests regarding your data.
+              You have the right to access, update, or delete your personal information. Contact us at <span className="font-medium text-red-500">support@ocjtechglobal.store</span> for any requests regarding your data.
             </p>
           </div>
 
@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
           <div className="text-center mt-12">
             <p className="text-gray-700">
               For questions regarding this Privacy Policy, contact us at: 
-              <span className="font-medium text-red-500"> support@ocjtechinternational.com</span>
+              <span className="font-medium text-red-500"> support@ocjtechglobal.store</span>
             </p>
           </div>
 
