@@ -27,5 +27,5 @@ boxShadow:{
 }
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [],
 }
