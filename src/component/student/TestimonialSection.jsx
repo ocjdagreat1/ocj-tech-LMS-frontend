@@ -1,11 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react' 
 import { assets, dummyTestimonial } from '../../assets/assets'
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
-
-import 'swiper/css'
-import 'swiper/css/pagination'
 
 const TestimonialSection = () => {
   const [expandedIndex, setExpandedIndex] = useState(null)
@@ -19,12 +13,12 @@ const TestimonialSection = () => {
     const isExpanded = expandedIndex === index
 
     return (
-      <div className='w-full max-w-[50%] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[380px] text-xs sm:text-sm text-left border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 mx-auto'>
+      <div className='w-full max-w-[95%] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[380px] text-xs sm:text-sm text-left border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 mx-auto mb-6 flex flex-col h-full'>
 
         {/* Header */}
-        <div className='flex items-center gap-3 px-5 py-4 bg-gray-50 rounded-t-xl'>
+        <div className='flex flex-col sm:flex-row items-center sm:items-start gap-3 px-5 py-4 bg-gray-50 rounded-t-xl text-center sm:text-left'>
           <img
-            className='h-10 w-10 rounded-full object-cover'
+            className='h-10 w-10 rounded-full object-cover mx-auto sm:mx-0'
             src={testimonial.image}
             alt={testimonial.name}
           />
@@ -39,10 +33,9 @@ const TestimonialSection = () => {
         </div>
 
         {/* Body */}
-        <div className='px-5 py-5'>
-
+        <div className='px-5 py-5 flex flex-col flex-1'>
           {/* Rating */}
-          <div className='flex gap-1'>
+          <div className='flex justify-center sm:justify-start gap-1'>
             {[...Array(5)].map((_, i) => (
               <img
                 className='h-4'
@@ -61,7 +54,7 @@ const TestimonialSection = () => {
           <p
             className={`text-gray-600 mt-3 whitespace-pre-line leading-relaxed ${
               isExpanded ? '' : 'line-clamp-3'
-            }`}
+            } text-center sm:text-left flex-1`}
           >
             {testimonial.feedback}
           </p>
@@ -69,18 +62,17 @@ const TestimonialSection = () => {
           {/* Read More */}
           <button
             onClick={() => toggleReadMore(index)}
-            className='text-blue-500 text-xs font-medium mt-3 hover:text-blue-600 transition-colors'
+            className='text-blue-500 text-xs font-medium mt-3 hover:text-blue-600 transition-colors block mx-auto sm:mx-0'
           >
             {isExpanded ? 'Read Less' : 'Read More'}
           </button>
-
         </div>
       </div>
     )
   }
 
   return (
-    <div className='pb-16 px-4 sm:px-6 lg:px-6 text-center max-w-7xl mx-auto overflow-hidden'>
+    <div className='pb-16 px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto overflow-hidden'>
 
       {/* Section Title */}
       <h2 className='text-2xl sm:text-3xl font-semibold text-gray-800'>
@@ -92,37 +84,23 @@ const TestimonialSection = () => {
         success, and how our platform has made a difference in their lives.
       </p>
 
-      {/* ---------- MOBILE CAROUSEL ---------- */}
-      <div className='mt-10 sm:hidden w-full'>
-        <Swiper
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          centeredSlides={true}
-          slidesPerView={1.05}
-          spaceBetween={16}
-          breakpoints={{
-            320: { slidesPerView: 1.05 },
-            375: { slidesPerView: 1.1 },
-            425: { slidesPerView: 1.2 },
-            640: { slidesPerView: 1.3 },
-          }}
-        >
-          {dummyTestimonial.map((testimonial, index) => (
-            <SwiperSlide key={index} className='w-full sm:w-auto'>
-              <TestimonialCard testimonial={testimonial} index={index} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/* ---------- TABLET & DESKTOP ---------- */}
-      <div className='hidden sm:flex flex-wrap justify-center gap-4 mt-12'>
+      {/* ---------- MOBILE: STACKED VERTICAL ---------- */}
+      <div className='flex flex-col items-center mt-10 sm:hidden'>
         {dummyTestimonial.map((testimonial, index) => (
           <TestimonialCard
             key={index}
             testimonial={testimonial}
             index={index}
           />
+        ))}
+      </div>
+
+      {/* ---------- TABLET & DESKTOP: GRID with equal height cards ---------- */}
+      <div className='hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
+        {dummyTestimonial.map((testimonial, index) => (
+          <div key={index} className='flex'>
+            <TestimonialCard testimonial={testimonial} index={index} />
+          </div>
         ))}
       </div>
 
