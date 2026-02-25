@@ -19,7 +19,7 @@ const TestimonialSection = () => {
     const isExpanded = expandedIndex === index
 
     return (
-      <div className='w-full max-w-[320px] sm:max-w-[340px] text-xs sm:text-sm text-left border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 mx-auto'>
+      <div className='w-full max-w-[50%] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[380px] text-xs sm:text-sm text-left border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 mx-auto'>
 
         {/* Header */}
         <div className='flex items-center gap-3 px-5 py-4 bg-gray-50 rounded-t-xl'>
@@ -80,7 +80,7 @@ const TestimonialSection = () => {
   }
 
   return (
-    <div className='pb-16 px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto overflow-hidden'>
+    <div className='pb-16 px-4 sm:px-6 lg:px-6 text-center max-w-7xl mx-auto overflow-hidden'>
 
       {/* Section Title */}
       <h2 className='text-2xl sm:text-3xl font-semibold text-gray-800'>
@@ -93,16 +93,22 @@ const TestimonialSection = () => {
       </p>
 
       {/* ---------- MOBILE CAROUSEL ---------- */}
-      <div className='mt-10 sm:hidden w-full px-2'>
+      <div className='mt-10 sm:hidden w-full'>
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}
           centeredSlides={true}
-          slidesPerView={'auto'}
+          slidesPerView={1.05}
           spaceBetween={16}
+          breakpoints={{
+            320: { slidesPerView: 1.05 },
+            375: { slidesPerView: 1.1 },
+            425: { slidesPerView: 1.2 },
+            640: { slidesPerView: 1.3 },
+          }}
         >
           {dummyTestimonial.map((testimonial, index) => (
-            <SwiperSlide key={index} className="!w-[280px]">
+            <SwiperSlide key={index} className='w-full sm:w-auto'>
               <TestimonialCard testimonial={testimonial} index={index} />
             </SwiperSlide>
           ))}
@@ -110,7 +116,7 @@ const TestimonialSection = () => {
       </div>
 
       {/* ---------- TABLET & DESKTOP ---------- */}
-      <div className='hidden sm:flex flex-wrap justify-center gap-8 mt-12'>
+      <div className='hidden sm:flex flex-wrap justify-center gap-4 mt-12'>
         {dummyTestimonial.map((testimonial, index) => (
           <TestimonialCard
             key={index}
